@@ -1,0 +1,16 @@
+(define (permute string)
+  (cond ((null? string) '(#f))
+	((null? (cdr string)) (list string))
+	(else ;; extract each item in list in turn and perm the rest
+	  (let splice ((l '()) (m (car string)) (r (cdr string)))
+	    (append
+	      (map (lambda (x) (cons m x)) (permute (append l r))
+		   (newline))
+	      (if (null? r) '()
+		(splice (cons m l) (car r) (cdr r))))))))
+ 
+(display (permute '(a e d)))
+
+(display (permute '()))
+
+(display (permute '(a)))
