@@ -42,6 +42,7 @@ For example:
 (anagram '() '(a e t))
 #f
 
+
 (Hint: You may wish to recall some potentially useful standard functions like symbol->string, string->symbol, string-append, etc.)
 
 Notice that anagram always returns #f. The legal permutations must be displayed to standard output, not returned. This is to avoid building enormous lists in memory (consider how many permutations there are of a list of length 10).
